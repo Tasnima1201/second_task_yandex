@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+</head>
+<body>
+<div class="wrapper">
+
+	<h3> Отредактировать данные о школах</h3>
+	<div class="all_courses">
+
+		<div class="course_info">
+			<ul>
+				<li>Название школы</li>
+				<li>Количество студентов</li>
+			</ul>
+		</div>
+
+		<form id="change_course" hidden >
+			<div>
+				<label for="name">Название школы:</label>
+				<input type="text" name="name" class="large" >
+			</div>
+			<div>
+				<label for="num_students">Количество студентов:</label>
+				<input type="number" name="num_students" class="small">
+			</div>
+				<button type="submit">Изменить</button>  
+		</form>
+
+		
+
+	</div>
+
+	<div class="course_tabs">
+		<div class="tab_name">
+			<h3> Добавить школу</h3>
+			
+		</div>
+		<div class="tab_data">
+
+			<form id="add_course">
+				<div>	
+					<label for="name">Название школы:</label>
+					<input type="text" name="name" class="large" >
+				</div>
+				<div>	
+					<label for="num_students">Количество студентов:</label>
+					<input type="number" name="num_students" class="small">
+				</div>
+
+				<button type="submit">Добавить</button>  
+			</form>
+		</div>
+	</div>
+
+	<h3> Отредактировать данные об аудиториях</h3>
+	<div class="all_classrooms">
+
+		<div class="classroom_info">
+			<ul>
+				<li>Название аудитории</li>
+				<li>Вместительность</li>
+				<li>Дополнительная информация</li>
+			</ul>
+		</div>
+
+		<form id="change_classroom" hidden >
+				
+			<div>
+				<label for="name">Название аудитории:</label>
+				<input type="text" name="name" class="middle">
+			</div>
+			<div>
+				<label for="capacity">Вместимость:</label>
+				<input type="number" name="capacity" class="small">
+			</div>
+			<div>
+				<label for="location">Расположение:</label>
+				<input type="text" name="location" class="large">
+			</div>
+
+			<button type="submit"> Обновить </button> 
+		</form>
+	</div>
+
+	<h3> Добавить аудиторию</h3>
+	<form id="add_classroom">
+		<div>
+			<label for="name">Название аудитории:</label>
+			<input type="text" name="name" class="middle">
+		</div>
+		<div>
+			<label for="capacity">Вместимость:</label>
+			<input type="number" name="capacity" class="small">
+		</div>
+
+		<div>
+			<label for="location">Расположение:</label>
+			<input type="text" name="location" class="large">
+		</div>
+
+		<button type="submit">Добавить</button> 
+	</form>
+
+	<h3>Обновить информацию о лекциях</h3>
+	<div class="all_lectures">
+		<div class="schedule">	
+		</div>
+
+		<form id="change_lecture" hidden >
+			<div>
+				<label for="name">Школа:</label>
+				<select class="choose_course large"></select>
+			</div>
+			<div>
+				<label for="name">Название лекции:</label>
+				<input type="text" name="name" class="large">
+			</div>
+			<div>
+				<label for="lecturer">Лектор:</label>
+				<input type="text" name="lecturer" class="middle">
+			</div>
+
+			<div>
+				<label for="date">Дата:</label>
+				<input type="date" name="date" class="middle">
+			</div>
+
+			<div>
+				<label for="name">Время начала:</label>
+				<input type="time" name="name" class="small">
+			</div>
+
+			<div>
+				<label for="name">Время конца:</label>
+				<input type="time" name="name" class="small">
+			</div>
+
+			<div>
+				<label for="name">Название аудитории:</label>
+				<select class="choose_classroom middle"></select>
+			</div>
+			
+			<button type="submit">Обновить</button> 
+		</form>
+
+	</div>
+	
+
+	<h3> Добавить лекцию</h3>
+	<form id="add_lecture" action="" >
+		<div>
+			<label for="name">Школа:</label>
+			<select class="choose_course large"></select>
+		</div>
+		<div>
+			<label for="name">Название лекции:</label>
+			<input type="text" name="name" class="large">
+		</div>
+		<div>
+			<label for="lecturer">Лектор:</label>
+			<input type="text" name="lecturer" class="middle">
+		</div>
+
+		<div>
+			<label for="date">Дата:</label>
+			<input type="date" name="date" class="middle">
+		</div>
+
+		<div>
+			<label for="name">Время начала:</label>
+			<input type="time" name="name" class="small">
+		</div>
+
+		<div>
+			<label for="name">Время конца:</label>
+			<input type="time" name="name" class="small">
+		</div>
+
+		<div>
+			<label for="name">Название аудитории:</label>
+			<select class="choose_classroom middle"></select>
+		</div>
+		
+		<button type="submit">Добавить</button> 
+	</form>
+
+	<div>
+		<h3>Найти лекции в интервале дат</h3>
+		<form id="search_lecture_by_course">
+		<div>
+			<label for="name">Школа:</label>
+			<select class="choose_course large"></select>
+		</div>
+		<div>
+			<label for="date_from">С: </label>
+			<input type="date" name="date_from" class="middle" >
+		</div>
+		<div>	
+			<label for="date_to">По: </label>
+			<input type="date" name="date_to" class="middle">
+		</div>
+			<button type="submit">Найти</button>  
+		</form>
+
+		<div class="selected_lectures_for_course">
+			
+		</div>
+
+	</div>
+
+	<div>
+		<h3>Посмотреть лекции по аудитории</h3>
+		<form id="search_lecture_by_classroom">
+		<div>
+			<label for="name">Школа:</label>
+			<select class="choose_classroom middle"></select>
+		</div>
+		<div>
+			<label for="date_from">С: </label>
+			<input type="date" name="date_from" class="middle" >
+		</div>
+		<div>	
+			<label for="date_to">По: </label>
+			<input type="date" name="date_to" class="middle">
+		</div>
+			<button>Найти</button>  
+		</form>
+
+		<div class="selected_lectures_for_classroom">
+			
+		</div>
+
+	</div>
+</div>
+
+
+	<script id="course-template" type="text/x-handlebars-template"> 
+		<div class="course_title"><h3>{{name}}</h3></div>
+		<div class="course_schedule">
+			<ul data-id="{{id}}">
+				<li class="lecture_info">
+					<ul>
+						<li>Название лекции</li>
+						<li>Лектор</li>
+						<li>Дата</li>
+						<li>Начало</li>
+						<li>Окончание</li>
+						<li>Аудитория</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</script>
+
+	<script id="lecture-template" type="text/x-handlebars-template">
+			<ul data-id="{{id}}">
+				<li>{{name}}</li>
+				<li>{{lecturer}}</li>
+				<li>{{date}}</li>
+				<li>{{begin}}</li>
+				<li>{{end}}</li>
+				<li>{{classroom}}</li>
+				<!-- аудитория <li></li> -->
+			</ul>
+	</script>
+
+	<script id="course_info-template" type="text/x-handlebars-template">
+			<ul data-id="{{id}}">
+				<li>{{name}}</li>
+				<li>{{numStudents}}</li>
+			</ul>
+	</script>
+
+	<script id="classroom_info-template" type="text/x-handlebars-template">
+
+			<ul data-id="{{id}}">
+				<li>{{name}}</li>
+				<li>{{capacity}}</li>
+				<li>{{location}}</li>
+
+			</ul>
+		
+	</script>
+	<script type="text/javascript" src="./dest/api.js"></script>	
+</body>
+</html>
